@@ -1,5 +1,6 @@
 # Vixy video API integration in React
 
+Using the Kaltura API with Vixy video returning videos stored in account.
 POC working with Contentful UI extensions
 Using the [Forma36](https://f36-storybook.contentful.com/) Component library.
 
