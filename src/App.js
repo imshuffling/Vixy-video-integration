@@ -12,15 +12,12 @@ const App = () => {
 
   //https://cors-anywhere.herokuapp.com/
   // let cors = ``
-  let startSession = `https://platform.vixyvideo.com/api_v3?secret=7fba2533ad573938cba13c5c0920c92d&userId=david.riches@appnovation.com&type=ADMIN&partnerId=568&expiry=3600&service=session&action=start`;
 
   const [media, setMedia] = useState(null);
   const [isShown, setShown] = useState(false);
   const [data, setData] = useState('')
   const [searchTerm, setSearchTerm ] = useState('')
-
   const doReset = () => setSearchTerm('')
-
 
   function removeVideo() {
     setData('')
@@ -32,6 +29,8 @@ const App = () => {
   }
 
   useEffect(() => {
+    let startSession = `https://platform.vixyvideo.com/api_v3?secret=7fba2533ad573938cba13c5c0920c92d&userId=david.riches@appnovation.com&type=ADMIN&partnerId=568&expiry=3600&service=session&action=start`;
+
     async function fetchData() {
       try {
         const responseSession = await axios.get(
@@ -99,8 +98,6 @@ const App = () => {
         </>
        } 
 
-      {/* {JSON.stringify(data, 2, null)} */}
-
       <Modal size={'fullWidth'} title="Vixy Video"
         isShown={isShown}
         onClose={() => {
@@ -134,6 +131,8 @@ const App = () => {
           return mediaItem
         } else if (mediaItem.name.toLowerCase().includes(searchTerm.toLowerCase())) {
           return mediaItem
+        } else {
+          return mediaItem
         }
       }).map((mediaItem, i) => {
           return (
@@ -145,19 +144,16 @@ const App = () => {
             </Card>
           )
       })}
-
       </Grid>
     </Modal>
     </div>
     );
   }
-
   return (
     <div>
       <Spinner color={'primary'} />
     </div>
   )
-
 }
 
 export default App;
