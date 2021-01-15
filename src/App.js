@@ -10,9 +10,6 @@ import { Grid, Card, Spinner, Paragraph, Modal, Button, TextField, Icon } from '
 
 const App = () => {
 
-  //https://cors-anywhere.herokuapp.com/
-  // let cors = ``
-
   const [media, setMedia] = useState(null);
   const [isShown, setShown] = useState(false);
   const [data, setData] = useState('')
@@ -29,7 +26,9 @@ const App = () => {
   }
 
   useEffect(() => {
-    let startSession = `https://platform.vixyvideo.com/api_v3?secret=7fba2533ad573938cba13c5c0920c92d&userId=david.riches@appnovation.com&type=ADMIN&partnerId=568&expiry=3600&service=session&action=start`;
+
+    const CORS = `https://whispering-everglades-53450.herokuapp.com/`
+    let startSession = `${CORS}https://platform.vixyvideo.com/api_v3?secret=7fba2533ad573938cba13c5c0920c92d&userId=david.riches@appnovation.com&type=ADMIN&partnerId=568&expiry=3600&service=session&action=start`;
 
     async function fetchData() {
       try {
@@ -44,7 +43,7 @@ const App = () => {
 
         // Using response dataGetting Session Key
         let API_KEY = xml.getElementsByTagName('result')[0].value
-        let getMediaList = `https://platform.vixyvideo.com/api_v3?format=1&partnerId=568&ks=${API_KEY}&service=media&action=list`;
+        let getMediaList = `${CORS}https://platform.vixyvideo.com/api_v3?format=1&partnerId=568&ks=${API_KEY}&service=media&action=list`;
 
         console.log(getMediaList)
 
