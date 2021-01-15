@@ -131,7 +131,7 @@ const App = () => {
         } else if (mediaItem.name.toLowerCase().includes(searchTerm.toLowerCase())) {
           return mediaItem
         } else {
-          return mediaItem
+          return '';
         }
       }).map((mediaItem, i) => {
           return (
