@@ -1,4 +1,4 @@
-# Vixy video API integration
+# Vixy video API integration in React
 
 POC working with Contentful UI extensions
 Using the [Forma36](https://f36-storybook.contentful.com/) Component library.
