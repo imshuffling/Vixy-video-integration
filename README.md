@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ---
 
 ## TODOs
-- Integrate into UI extension for Contentful
+~~- Integrate into UI extension for Contentful~~
 
 # To get the project running...
 ### `npm start`
